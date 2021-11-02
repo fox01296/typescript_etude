@@ -1,0 +1,35 @@
+export {};
+
+class Person {
+    public name: string;
+    private age: number;
+    protected nationality:string;
+
+    constructor(name: string, age: number,nationarity:string) {
+        this.name = name;
+        this.age = age;
+        this.nationality=nationarity;
+    }
+
+    profile(): string {
+        return `name: ${this.name},age: ${this.age},nationality: ${this.nationality}`
+    }
+}
+
+class Android extends Person {
+    constructor(name:string,age:number,nationality:string) {
+        super(name,age,nationality);
+    }
+    profile(): string {
+        return super.profile();
+    }
+}
+
+let taro = new Person('Taro', 13,'Japan');
+let hanako = new Android('Hanako', 13,'Japan');
+
+console.log(taro.profile());
+console.log(taro.name);
+console.log(hanako.profile());
+console.log(hanako.name);
+// console.log(taro.age);
